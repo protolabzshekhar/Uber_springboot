@@ -7,15 +7,13 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Collection;
-
 
 @Document
 @Getter
 @Setter
 @NoArgsConstructor  // Generates an empty constructor
 @AllArgsConstructor
-public class Users {
+public class User {
     @Id
     private String id;
     private String name;
