@@ -15,6 +15,7 @@ public class AuthController {
     @Autowired
     private UserServices userService;
 
+    @Autowired
     private jwtService  jwtService;
 
     @GetMapping("/health-check")
