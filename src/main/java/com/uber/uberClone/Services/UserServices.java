@@ -19,9 +19,7 @@ public class UserServices {
 
     //Create user
     public User createUser(User user){
-//       if(userRepository.existsByEmail(user.email)){
-//           throw new RuntimeException("Email already exist");
-//       }
+        user.setPassword(encoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
     public boolean userExistByEmail(User user){

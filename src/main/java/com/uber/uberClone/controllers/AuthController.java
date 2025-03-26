@@ -36,7 +36,7 @@ public class AuthController {
 
         User exisitngUser = userService.findUserByEmail(user.getEmail());
 
-        if (exisitngUser != null && user.getPassword().equals(exisitngUser.getPassword())) {
+        if (exisitngUser != null && userService.matchPassword(user, exisitngUser)) {
             String token = jwtService.generateToken(exisitngUser);
             return ResponseEntity.ok().body(token);
         }
